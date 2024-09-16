@@ -1,10 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Slide1Activity">
+    tools:context=".Slide1Activity"
+    android:orientation="vertical">
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:id="@+id/ivmyprofilepic"
+        android:src="@drawable/mypic"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnMyProfileChangepic"
+        android:background="@drawable/btco"
+        android:text="Change Profile Photo "
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif"
+        android:layout_margin="16dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:id="@+id/tvmyprofilename"
+        android:textColor="@color/white"
+        android:text="Name"
+        android:textStyle="bold"
+        android:layout_margin="16dp"
+        android:background="@drawable/backgroundreg"
+        android:gravity="center_vertical"
+        android:drawableLeft="@drawable/name"
+        android:drawablePadding="12sp"
+        android:paddingLeft="12sp"
+        />
+</LinearLayout>
