@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">school</string>
+    <string name="title">Smart School</string>
+    <string name="login_here">Login here</string>
+    <string name="new_user_click_here">New User Click Here</string>
+    <string name="login">Login</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_google_map">GoogleMapActivity</string>
+    <string name="success">success</string>
+    <string name="forget_password">Forget Password?</string>
+    <string name="enter_registered_mobile_no">Enter Registered Mobile No</string>
+    <string name="verify">Verify</string>
+    <!--    <String name="toptitle">Today's Classes</String>-->
+</resources>

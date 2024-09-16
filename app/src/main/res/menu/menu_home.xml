@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menuHomeQRCode"
+        android:title="QR Code"
+        app:showAsAction="always"
+        android:icon="@drawable/qrcode"
+        android:iconTint="@color/golden"/>
+    <item
+        android:id="@+id/menuHomeMyLocation"
+        android:title="My Location"
+        app:showAsAction="never"
+        android:icon="@drawable/i_location_on_24"/>
+
+    <item
+        android:id="@+id/menuhomelogout"
+        android:title="Logout"
+        app:showAsAction="always"
+        android:icon="@drawable/iconlogout"/>
+<item
+    android:id="@+id/menuhomemyprofile"
+    android:title="My Profile"
+    app:showAsAction="never"
+    android:icon="@drawable/icon_profile"/>
+    <item
+        android:id="@+id/menuhomesetting"
+        android:title="Setting"
+        app:showAsAction="never"
+        android:icon="@drawable/iconsetting"/>
+    <item
+        android:id="@+id/menuhomecontactus"
+        android:title="Contact Us"
+        app:showAsAction="never"
+        android:icon="@drawable/contact"/>
+    <item
+        android:id="@+id/menuhomeaboutus"
+        android:title="About Us"
+        app:showAsAction="never"
+        android:icon="@drawable/iconabout"/>
+</menu>

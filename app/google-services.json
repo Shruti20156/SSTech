@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "689627414160",
+    "project_id": "schooltechapp-4296e",
+    "storage_bucket": "schooltechapp-4296e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:689627414160:android:46efb59cec3e179c9ee215",
+        "android_client_info": {
+          "package_name": "com.shruti.school"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9H1e-TxIr7I8-U6DczPP251Kgtbw-ONs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
