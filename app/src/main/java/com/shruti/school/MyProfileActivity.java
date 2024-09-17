@@ -32,10 +32,20 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.messaging.FirebaseMessaging;
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.JsonHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
+import com.shruti.school.comman.Urls;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+
+import cz.msebera.android.httpclient.Header;
 
 public class MyProfileActivity extends AppCompatActivity {
 //TextView tvToken;
@@ -173,6 +183,64 @@ Button btnsignout;
 //            }
 //        }
 //    }
-    }
+        @Override
+        protected void onStart() {
+            super.onStart();
+            progressDialog=new ProgressDialog(MyProfileActivity.this);
+            progressDialog.setTitle("My Profile");
+            progressDialog.setMessage("Please wait...");
+            progressDialog.setCanceledOnTouchOutside(true);
+            progressDialog.show();
+
+            getMyDetails();
+        }
+//mutliple rows=> single row
+//            multiple rows=>multiple data
+        private void getMyDetails() {
+            AsyncHttpClient client=new AsyncHttpClient();//client server communication ,pass data by network
+            RequestParams params=new RequestParams();//put the data in AsyncHttpClient
+            params.put("username",strUsername);
+            client.post(Urls.MyDetailsWebsevice,params,new JsonHttpResponseHandler()
+            {
+                //            JsonArray=>JsonObject
+                @Override
+                public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                    super.onSuccess(statusCode, headers, response);
+                    progressDialog.dismiss();
+                    try {
+                        JSONArray jsonArray=response.getJSONArray("getMyDetails");
+                        for (int i=0;i<jsonArray.length();i++)
+                        {
+                            JSONObject jsonObject=jsonArray.getJSONObject(i);
+                            String strid=jsonObject.getString("id");
+                            String strname=jsonObject.getString("name");
+                            String strmob=jsonObject.getString("mob");
+                            String stremail=jsonObject.getString("email");
+                            String strusername=jsonObject.getString("username");
+
+                            tvName.setText(strname);
+                            tvMob.setText(strmob);
+                            tvEmailId.setText(stremail);
+                            tvUsername.setText(strusername);
+                        }
+
+
+                    } catch ( JSONException e ) {
+                        throw new RuntimeException(e);
+                    }
+
+                }
+
+                @Override
+                public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                    super.onFailure(statusCode, headers, throwable, errorResponse);
+                    progressDialog.dismiss();
+                    Toast.makeText(MyProfileActivity.this, "Server Error", Toast.LENGTH_SHORT).show();
+                }
+            });
+
+
+
+        }
 }
 
