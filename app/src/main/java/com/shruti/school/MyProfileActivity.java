@@ -94,7 +94,6 @@ Button btnsignout;
                 }
             });
         }
-
 //        tvPassword=findViewById(R.id.tvmyprofilePassword);
 //        tvToken=findViewById(R.id.tvmyprofileToken);
 
@@ -174,22 +173,6 @@ Button btnsignout;
 //            }
 //        }
 //    }
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        progressDialog=new ProgressDialog(MyProfileActivity.this);
-        progressDialog.setTitle("My Profile");
-        progressDialog.setMessage("Please wait...");
-        progressDialog.setCanceledOnTouchOutside(true);
-        progressDialog.show();
-
-        getMyDetails();
-    }
-
-    private void getMyDetails() {
-
     }
 }
 
